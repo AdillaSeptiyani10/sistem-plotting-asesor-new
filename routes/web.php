@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AsesorController;
-use App\Http\Controllers\PesertaController;
 use App\Http\Controllers\PlottingController;
 use App\Http\Controllers\TukController;
 use App\Http\Controllers\ProfileController;
@@ -19,10 +18,9 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/', function () {
         $totalAsesor   = \App\Models\Asesor::count();
-        $totalPeserta  = \App\Models\Peserta::count();
         $totalPlotting = \App\Models\Plotting::count();
         $totalTuk      = \App\Models\Tuk::count();
-        return view('dashboard', compact('totalAsesor', 'totalPeserta', 'totalPlotting', 'totalTuk'));
+        return view('dashboard', compact('totalAsesor', 'totalPlotting', 'totalTuk'));
     })->name('home');
 
     Route::get('/dashboard', function () {
@@ -30,7 +28,6 @@ Route::middleware(['auth'])->group(function () {
     })->name('dashboard');
 
     Route::resource('asesor',   AsesorController::class);
-    Route::resource('peserta',  PesertaController::class);
     Route::resource('plotting', PlottingController::class);
     Route::resource('tuk',      TukController::class);
 

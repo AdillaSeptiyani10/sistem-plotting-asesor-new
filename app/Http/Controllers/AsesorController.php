@@ -20,34 +20,41 @@ class AsesorController extends Controller
 
     public function store(Request $request)
     {
-        Asesor::create($request->all());
+        $request->validate([
+            'nama'  => 'required',
+            'email' => 'required|email',
+            'no_hp' => 'required',
+        ]);
 
-        return redirect('/asesor')
-            ->with('success', 'Data berhasil ditambah');
+        Asesor::create($request->only('nama', 'email', 'no_hp'));
+
+        return redirect('/asesor')->with('success', 'Data asesor berhasil ditambahkan.');
     }
 
     public function edit($id)
     {
         $asesor = Asesor::findOrFail($id);
-
         return view('asesor.edit', compact('asesor'));
     }
 
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'nama'  => 'required',
+            'email' => 'required|email',
+            'no_hp' => 'required',
+        ]);
+
         $asesor = Asesor::findOrFail($id);
+        $asesor->update($request->only('nama', 'email', 'no_hp'));
 
-        $asesor->update($request->all());
-
-        return redirect('/asesor');
+        return redirect('/asesor')->with('success', 'Data asesor berhasil diupdate.');
     }
 
     public function destroy($id)
     {
         $asesor = Asesor::findOrFail($id);
-
         $asesor->delete();
-
-        return back();
+        return back()->with('success', 'Data asesor berhasil dihapus.');
     }
 }

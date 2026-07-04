@@ -60,25 +60,6 @@
             </div>
         </div>
 
-        <!-- Total Peserta -->
-        <div class="col-xxl-3 col-md-6">
-            <div class="card stretch stretch-full">
-                <div class="card-body">
-                    <div class="d-flex align-items-center justify-content-between">
-                        <div class="d-flex align-items-center gap-3">
-                            <div class="avatar-text avatar-xl rounded bg-soft-success text-success">
-                                <i class="feather-users"></i>
-                            </div>
-                            <a href="{{ route('peserta.index') }}" class="fw-bold d-block">
-                                <span class="text-truncate-1-line">Total Peserta</span>
-                                <span class="fs-24 fw-bolder d-block">{{ $totalPeserta }}</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
         <!-- Total Plotting -->
         <div class="col-xxl-3 col-md-6">
             <div class="card stretch stretch-full">

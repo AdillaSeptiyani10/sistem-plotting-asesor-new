@@ -42,7 +42,7 @@
                                 <tr>
                                     <th>No</th>
                                     <th>Nama</th>
-                                    <th>Bidang</th>
+                                    <th>Email</th>
                                     <th>No HP</th>
                                     <th class="text-end">Aksi</th>
                                 </tr>
@@ -62,7 +62,7 @@
                                         </div>
                                     </td>
                                     <td>
-                                        <span class="badge bg-soft-info text-info">{{ $item->bidang }}</span>
+                                        <i class="feather-mail me-2"></i>{{ $item->email ?? '-' }}
                                     </td>
                                     <td>
                                         <i class="feather-phone me-2"></i>{{ $item->no_hp }}

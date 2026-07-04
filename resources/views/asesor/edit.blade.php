@@ -39,9 +39,9 @@
                         </div>
 
                         <div class="mb-4">
-                            <label class="form-label">Bidang Keahlian <span class="text-danger">*</span></label>
-                            <input type="text" name="bidang" class="form-control @error('bidang') is-invalid @enderror" value="{{ old('bidang', $asesor->bidang) }}" placeholder="Contoh: Teknik Informatika" required>
-                            @error('bidang')
+                            <label class="form-label">Email <span class="text-danger">*</span></label>
+                            <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" value="{{ old('email', $asesor->email) }}" placeholder="Contoh: asesor@email.com" required>
+                            @error('email')
                                 <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
                         </div>

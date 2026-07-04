@@ -8,6 +8,7 @@ class Asesor extends Model
 {
     protected $fillable = [
         'nama',
+        'email',
         'bidang',
         'no_hp'
     ];

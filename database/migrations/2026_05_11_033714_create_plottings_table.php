@@ -18,9 +18,7 @@ return new class extends Migration
               ->constrained()
               ->onDelete('cascade');
 
-        $table->foreignId('peserta_id')
-              ->constrained()
-              ->onDelete('cascade');
+        $table->unsignedInteger('jumlah_peserta');
 
         $table->date('tanggal');
         $table->string('lokasi');
